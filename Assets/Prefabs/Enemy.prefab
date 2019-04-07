@@ -91,8 +91,8 @@ GameObject:
   - component: {fileID: 8043086239142304240}
   - component: {fileID: 3868498066661910684}
   - component: {fileID: 5543568453040521495}
-  - component: {fileID: 5169682406950394209}
   - component: {fileID: 1486930608383756370}
+  - component: {fileID: 5827468280038355230}
   m_Layer: 13
   m_Name: Enemy
   m_TagString: Untagged
@@ -202,7 +202,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.34375
---- !u!114 &5169682406950394209
+--- !u!114 &1486930608383756370
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -211,10 +211,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 1486930608383756369}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c218877fba381440bb42d589bb1552b5, type: 3}
+  m_Script: {fileID: 11500000, guid: 9443c10c3e0a7a449b64996a66f83312, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bulletsNum: 0
+  viewRadius: 4
+  viewAngle: 71
+  attackDist: 0.2
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 1024
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 4096
+  visibleTargets: []
+--- !u!114 &5827468280038355230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486930608383756369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15dde4386fbd14d989b13792f05e3eae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _weaponInHand: {fileID: 2630259385380163963}
   _weapons:
   - {fileID: 21300000, guid: 43a139c7bee644f6f96d3ce30cc7cc15, type: 3}
@@ -229,41 +250,19 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 3581680fef4f648cc9d5fd17a09d9d6a, type: 3}
   - {fileID: 21300000, guid: a6bb0ee89f1054bb7820664bbd8772a9, type: 3}
   - {fileID: 21300000, guid: baaeab92311a94614a65b9c137e54777, type: 3}
-  _bigWeapons:
-  - {fileID: 3827091316514170551, guid: 010c7344f1a014c21bfa6e8857b33f96, type: 3}
-  - {fileID: 5718519385457895363, guid: a8bc43fc5c9c14fb68a2763a6e75082c, type: 3}
-  - {fileID: 8775174418047830188, guid: 6dd8633817b31478294b1bd3bbcc9a6f, type: 3}
-  - {fileID: 9042417041602040317, guid: 2d38a90b18ae742a4af34fafce8c77f6, type: 3}
-  - {fileID: 3912899428016483633, guid: 45156603a767f4ed5b10ca6a6041516c, type: 3}
-  - {fileID: 4927601718250655639, guid: 484815b82ae5a4a3b821810b20b8190d, type: 3}
-  - {fileID: 2413958453970192489, guid: 8f2bcb6798aa34af3a0e3c3e71eeff1a, type: 3}
-  - {fileID: 6336397431351738741, guid: 44c7dcf89f5bd44f690d0a14571fb7c0, type: 3}
-  - {fileID: 5064639352707502217, guid: fc705e3c0d1f74898aa91724ecf7294d, type: 3}
-  - {fileID: 3251151619384091069, guid: a827966174683427a9e2bbd681565a7a, type: 3}
-  - {fileID: 8179806400736374107, guid: 844808ed326aa4ac3bcc47efc3ca3a1d, type: 3}
-  - {fileID: 3087842669139961920, guid: b891d0891af5b4cecb6507debc0de353, type: 3}
---- !u!114 &1486930608383756370
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1486930608383756369}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9443c10c3e0a7a449b64996a66f83312, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  viewRadius: 4
-  viewAngle: 112
-  attackDist: 0.2
-  targetMask:
-    serializedVersion: 2
-    m_Bits: 1024
-  obstacleMask:
-    serializedVersion: 2
-    m_Bits: 4096
-  visibleTargets: []
+  _bullets:
+  - {fileID: 5262332642434378339, guid: be16c1176b8dd4920be862c593e75924, type: 3}
+  - {fileID: 3932147805447567123, guid: 669bc2cc36733477b98c8e9f2d515a53, type: 3}
+  - {fileID: 891775578548829567, guid: 598f4977c9e9945a199c0a31622898d2, type: 3}
+  - {fileID: 790405252628746781, guid: 89b653ae475a44fc88da870c186a958f, type: 3}
+  - {fileID: 5642751871375082444, guid: a5cf539b8d86544f3a6ee4c3ad80c20c, type: 3}
+  - {fileID: 1125906205177644595, guid: d872a098f4ed84287a7c4fa372c5f340, type: 3}
+  - {fileID: 1054941958376404209, guid: ec2a0ec67beea476084f6bf95478c2a6, type: 3}
+  - {fileID: 865080990495351680, guid: 3d4737fec676548b1a70b677c652cc40, type: 3}
+  - {fileID: 8090636264778664437, guid: 51f8568a8a4f2415bb71abf73f670d68, type: 3}
+  - {fileID: 3760840061139103804, guid: b48d9f7fe3a2e40b1992aa4d9304c660, type: 3}
+  - {fileID: 867205731137822839, guid: 7f980cafee50f442b80cb8de9359e688, type: 3}
+  - {fileID: 7722664613028368642, guid: 504c3a209d0f6412f825f8c942244ed8, type: 3}
 --- !u!1 &2916751428295459020
 GameObject:
   m_ObjectHideFlags: 0
