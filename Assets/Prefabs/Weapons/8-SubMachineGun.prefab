@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19db7edee4be34b0c88d3fafbfaae10c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletsNum: 10
+  bulletsNum: 50
   bullet: {fileID: 865080990495351680, guid: 3d4737fec676548b1a70b677c652cc40, type: 3}
 --- !u!50 &1801016094
 Rigidbody2D:
