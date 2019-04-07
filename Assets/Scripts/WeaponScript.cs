@@ -1,7 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 using UnityEngine.Events;
+
+using System;
+
 
 public class WeaponScript : MonoBehaviour
 {
@@ -12,10 +16,15 @@ public class WeaponScript : MonoBehaviour
     [SerializeField] public SpriteRenderer _weaponInHand;
     [SerializeField] private Sprite[] _weapons;
     [SerializeField] private GameObject[] _bigWeapons;
+
 	[System.Serializable]
 	public  class  V2Event: UnityEvent<Vector2>{ }
 	public V2Event ShootEvent;
-	void Start()
+    public AudioClip[] _sounds;
+    public AudioSource _shoot;
+    
+    void Start()
+
     {
         _maxBullets = 0;
         _weaponInHand.sprite = null;
@@ -51,6 +60,8 @@ public class WeaponScript : MonoBehaviour
                     bull.GetComponent<Rigidbody2D>().velocity = vel.normalized * 30;
                     _bulletsNum--;
                 }
+                _shoot.clip = _sounds[Int32.Parse(_weaponInHand.sprite.name) - 1];
+                _shoot.Play();
             }
     
             if (Input.GetMouseButtonDown(1) && _weaponInHand.sprite != null)

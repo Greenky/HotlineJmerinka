@@ -23,6 +23,12 @@ public class AmmoController : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.collider.tag == "Enemy")
+            StartCoroutine(other.gameObject.GetComponent<EnemyMove>().Stan());
+    }
+
     private void TriggerOn()
     {
         _rb.velocity = Vector2.zero;
