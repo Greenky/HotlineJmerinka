@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 792246964422879174}
   - component: {fileID: 1211190390}
   - component: {fileID: 1280120236}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 7-NesPistol
   m_TagString: Weapon
   m_Icon: {fileID: 0}

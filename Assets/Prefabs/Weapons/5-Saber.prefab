@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3294149653468039523}
   - component: {fileID: 1566070108}
   - component: {fileID: 1210589980}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 5-Saber
   m_TagString: Weapon
   m_Icon: {fileID: 0}

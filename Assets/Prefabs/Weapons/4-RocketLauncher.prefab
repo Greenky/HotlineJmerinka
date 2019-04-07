@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7636115404748504398}
   - component: {fileID: 532548500}
   - component: {fileID: 1786115325}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 4-RocketLauncher
   m_TagString: Weapon
   m_Icon: {fileID: 0}
