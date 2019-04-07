@@ -7,6 +7,8 @@ public class EnemyWeaponScript : MonoBehaviour
     [SerializeField] private SpriteRenderer _weaponInHand;
     [SerializeField] private Sprite[] _weapons;
     [SerializeField] private GameObject[] _bullets;
+    public AudioClip[] _sounds;
+    public AudioSource _shoot;
     private GameObject _bullet;
     
     void Start()
@@ -14,6 +16,7 @@ public class EnemyWeaponScript : MonoBehaviour
         int rand = Random.Range(0, _weapons.Length);
         _weaponInHand.sprite = _weapons[rand];
         _bullet = _bullets[rand];
+        _shoot.clip = _sounds[rand];
     }
 
     public void Shoot(Vector2 EnemyPos)
@@ -31,5 +34,6 @@ public class EnemyWeaponScript : MonoBehaviour
             Vector2 vel = new Vector3(EnemyPos.x, EnemyPos.y, 0) - transform.position;
             bull.GetComponent<Rigidbody2D>().velocity = vel.normalized * 30;
         }
+        _shoot.Play();
     }
 }

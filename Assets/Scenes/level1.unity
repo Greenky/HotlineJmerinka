@@ -6573,25 +6573,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4600676368494452686, guid: d74d18eedcdb44e23947cb054dd303ca, type: 3}
   m_PrefabInstance: {fileID: 1076621918}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &280827166 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6563697300432069241, guid: 6fcd270115f3b44ed836b1324e27b8e5, type: 3}
+--- !u!114 &280827167 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 280827167, guid: 6fcd270115f3b44ed836b1324e27b8e5, type: 3}
   m_PrefabInstance: {fileID: 6563697300375003110}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &280827167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 280827166}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8fdaeaf9c214d24988341d6fe7560c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHP: 1
-  maxHP: 0
 --- !u!1001 &280982899
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35931,14 +35923,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
-    - target: {fileID: 1486930608383756369, guid: 03621b32b22eb3143a84962a72cf5699, type: 3}
-      propertyPath: m_TagString
-      value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 1486930608383756370, guid: 03621b32b22eb3143a84962a72cf5699, type: 3}
-      propertyPath: viewAngle
-      value: 80
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03621b32b22eb3143a84962a72cf5699, type: 3}
 --- !u!1 &1457316665
@@ -53627,10 +53611,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6563697300432069241, guid: 6fcd270115f3b44ed836b1324e27b8e5, type: 3}
       propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 6563697300432069241, guid: 6fcd270115f3b44ed836b1324e27b8e5, type: 3}
-      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
