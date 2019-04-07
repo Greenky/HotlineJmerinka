@@ -7,42 +7,53 @@ public class EnemyMove : MonoBehaviour
 	public float viewRadius;
 	[Range(0, 360)]
 	public float viewAngle;
-	public float attackDist = 0.2f;
-	public float speed = 10f;
-
+	public float attackDist = 1.0f;
+	
 	public LayerMask targetMask;
 	public LayerMask obstacleMask;
-	
+
+	private bool _isShooting = false;
+	public bool isAlive = true;
 	//[HideInInspector]
 	public List<Transform> visibleTargets = new List<Transform>();
 
 	void Start()
 	{
-		StartCoroutine("FindTargetsWithDelay", .2f);
+//		StartCoroutine("FindTargetsWithDelay", .2f);
 	}
 
-
-	IEnumerator FindTargetsWithDelay(float delay)
+	private void Update()
 	{
-		while (true)
+		if (isAlive)
 		{
-			yield return new WaitForSeconds(delay);
 			FindVisibleTargets();
-			/*if (visibleTargets.Count > 0)
+			if (visibleTargets.Count > 0)
 			{
-				Vector2 pos = new Vector2(visibleTargets[0].transform.position.x, visibleTargets[0].transform.position.y);
-				MoveToTarget(attackDist, pos);
-			}*/
+				if (!_isShooting)
+					StartCoroutine(Shoot());
+				MoveToTarget(visibleTargets[0].position);
+			}
 		}
+		
 	}
 
-	private void MoveToTarget(float stopDist, Vector2 pos)
+	private IEnumerator Shoot()
+	{
+		_isShooting = true;
+		GetComponent<EnemyWeaponScript>().Shoot(visibleTargets[0].position);
+		yield return new WaitForSeconds(0.5f);
+		if (visibleTargets.Count > 0)
+			StartCoroutine(Shoot());
+		_isShooting = false;
+	}
+	
+	private void MoveToTarget(Vector3 pos)
 	{
 		float dist = Vector3.Distance(transform.position, visibleTargets[0].position);
 		Debug.Log(dist + " dist");
 		if (attackDist < dist)
 		{
-			GetComponent<Rigidbody2D>().MovePosition(pos*Time.deltaTime* speed);			
+			GetComponent<Rigidbody2D>().MovePosition((pos - transform.position).normalized * Time.deltaTime * 3 + transform.position);			
 		}
 	}
 
@@ -72,7 +83,6 @@ public class EnemyMove : MonoBehaviour
 			}
 		}
 	}
-
 
 	public Vector3 DirFromAngle(float angleInDegrees, bool angleIsGlobal)
 	{
