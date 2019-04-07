@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6304313126578477686}
   - component: {fileID: 1553031217}
   - component: {fileID: 4935647769380487095}
-  - component: {fileID: 700148779}
+  - component: {fileID: 230217487}
   m_Layer: 9
   m_Name: 3
   m_TagString: Untagged
@@ -129,7 +129,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &700148779
+--- !u!114 &230217487
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

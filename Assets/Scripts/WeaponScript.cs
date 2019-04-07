@@ -27,17 +27,21 @@ public class WeaponScript : MonoBehaviour
             GetWeaponInHand();
         }
 
-        if (Input.GetMouseButtonDown(0) && _bulletsNum > 0)
+        if (Input.GetMouseButtonDown(0) && _bulletsNum != 0 && _weaponInHand.sprite != null)
         {
             GameObject bull = Instantiate(_bullet, transform);
             bull.transform.localPosition = Vector2.zero;
             bull.transform.parent = null;
+            bull.transform.position += (new Vector3(mousePos.x, mousePos.y, 0) - bull.transform.position).normalized * 0.5f;
             bull.transform.eulerAngles = 
             new Vector3(0, 0, (Mathf.Atan2(mousePos.y - transform.position.y, mousePos.x - transform.position.x) 
              * Mathf.Rad2Deg));
-            Vector2 vel = new Vector3(mousePos.x, mousePos.y, 0) - transform.position;
-            bull.GetComponent<Rigidbody2D>().velocity = vel.normalized * 30;
-            _bulletsNum--;
+            if (_weaponInHand.sprite.name != "5" && _weaponInHand.sprite.name != "12")
+            {
+                Vector2 vel = new Vector3(mousePos.x, mousePos.y, 0) - transform.position;
+                bull.GetComponent<Rigidbody2D>().velocity = vel.normalized * 30;
+                _bulletsNum--;
+            }
         }
 
         if (Input.GetMouseButtonDown(1) && _weaponInHand.sprite != null)

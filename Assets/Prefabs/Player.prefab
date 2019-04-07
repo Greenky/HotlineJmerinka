@@ -314,6 +314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 10
+  _steping: {fileID: 6563697300234899084}
 --- !u!114 &125533602
 MonoBehaviour:
   m_ObjectHideFlags: 0
