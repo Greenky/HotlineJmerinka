@@ -65,12 +65,16 @@
     <Compile Include="Assets\Scripts\CanvasAmmo.cs" />
     <Compile Include="Assets\Scripts\Character.cs" />
     <Compile Include="Assets\Scripts\EnemyMove.cs" />
+    <Compile Include="Assets\Scripts\EnemyWeaponScript.cs" />
     <Compile Include="Assets\Scripts\FieldOfViewEditor.cs" />
+    <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\GunSpowner.cs" />
     <Compile Include="Assets\Scripts\HPcomponent.cs" />
+    <Compile Include="Assets\Scripts\MenuManager.cs" />
     <Compile Include="Assets\Scripts\MovementScript.cs" />
     <Compile Include="Assets\Scripts\PlayerFollow.cs" />
     <Compile Include="Assets\Scripts\Projectile.cs" />
+    <Compile Include="Assets\Scripts\ReloadLvl.cs" />
     <Compile Include="Assets\Scripts\WeaponScript.cs" />
     <None Include="Assets\Fonts\friday13\Font License.txt" />
     <None Include="Assets\Fonts\d3digitalism\Read Me.txt" />
@@ -89,8 +93,8 @@
     <Reference Include="Unity.TextMeshPro">
       <HintPath>D:/Unity/HotlineJmerinka/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>D:/Unity/HotlineJmerinka/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+    <Reference Include="Unity.Analytics.Android.Editor">
+      <HintPath>D:/Unity/HotlineJmerinka/Library/ScriptAssemblies/Unity.Analytics.Android.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.0f2/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -293,20 +297,20 @@
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.0f2/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Advertisements">
-      <HintPath>D:/Unity/HotlineJmerinka/Library/PackageCache/com.unity.ads@2.3.1/Runtime/UnityEngine.Advertisements.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Advertisements.Editor">
-      <HintPath>D:/Unity/HotlineJmerinka/Library/PackageCache/com.unity.ads@2.3.1/Runtime/UnityEngine.Advertisements.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>D:/Unity/HotlineJmerinka/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>D:/Unity/HotlineJmerinka/Library/PackageCache/com.unity.analytics@3.0.9/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>D:/Unity/HotlineJmerinka/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>D:/Unity/HotlineJmerinka/Library/PackageCache/com.unity.analytics@3.0.9/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>D:/Unity/HotlineJmerinka/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>D:/Unity/HotlineJmerinka/Library/PackageCache/com.unity.analytics@3.0.9/Unity.Analytics.Tracker.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Purchasing">
+      <HintPath>D:/Unity/HotlineJmerinka/Library/PackageCache/com.unity.purchasing@2.0.1/UnityEngine.Purchasing.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics">
+      <HintPath>D:/Unity/HotlineJmerinka/Library/PackageCache/com.unity.analytics@3.0.9/Android/Unity.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.0f2/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
