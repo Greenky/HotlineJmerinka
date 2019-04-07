@@ -17109,6 +17109,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 484815b82ae5a4a3b821810b20b8190d, type: 3}
+--- !u!114 &735285943 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1379352997, guid: bed99f7abe43f674e810b3e03a39736a, type: 3}
+  m_PrefabInstance: {fileID: 1751549998}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &738600141
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41404,6 +41415,38 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 1379352997, guid: bed99f7abe43f674e810b3e03a39736a, type: 3}
+      propertyPath: m_Text
+      value: 'AMMO: -'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5299745162339739816, guid: bed99f7abe43f674e810b3e03a39736a, type: 3}
+      propertyPath: ammoText
+      value: 
+      objectReference: {fileID: 735285943}
+    - target: {fileID: 1379352997, guid: bed99f7abe43f674e810b3e03a39736a, type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1379352999, guid: bed99f7abe43f674e810b3e03a39736a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -198.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 1379352999, guid: bed99f7abe43f674e810b3e03a39736a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -53.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 1379352999, guid: bed99f7abe43f674e810b3e03a39736a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 395.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1379352999, guid: bed99f7abe43f674e810b3e03a39736a, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 59.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 1379352997, guid: bed99f7abe43f674e810b3e03a39736a, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 40
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bed99f7abe43f674e810b3e03a39736a, type: 3}
 --- !u!1 &1752318229

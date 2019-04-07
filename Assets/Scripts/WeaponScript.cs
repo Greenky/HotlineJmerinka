@@ -5,14 +5,16 @@ using UnityEngine;
 public class WeaponScript : MonoBehaviour
 {
     private GameObject _bullet;
-    [SerializeField] private int _bulletsNum;
-    private GameObject _weaponUnderFeet;
-    [SerializeField] private SpriteRenderer _weaponInHand;
+    [SerializeField] public int _bulletsNum;
+    [SerializeField] public int _maxBullets;
+    public GameObject _weaponUnderFeet;
+    [SerializeField] public SpriteRenderer _weaponInHand;
     [SerializeField] private Sprite[] _weapons;
     [SerializeField] private GameObject[] _bigWeapons;
     
     void Start()
     {
+        _maxBullets = 0;
         _weaponInHand.sprite = null;
         _weaponUnderFeet = null;
         _bullet = null;
@@ -85,6 +87,7 @@ public class WeaponScript : MonoBehaviour
         string[] str = _weaponUnderFeet.name.Split('-');
         _bullet = _weaponUnderFeet.GetComponent<AmmoController>().bullet;
         _bulletsNum = _weaponUnderFeet.GetComponent<AmmoController>().bulletsNum;
+        _maxBullets = _bulletsNum;
         Destroy(_weaponUnderFeet);
         foreach (var weapon in _weapons)
         {
