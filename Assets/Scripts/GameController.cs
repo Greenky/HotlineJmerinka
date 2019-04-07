@@ -30,7 +30,8 @@ public class GameController : MonoBehaviour
 			}
 			if (enemys.Count == 0)
 			{
-				//WIN 
+				//WIN
+				player.gameObject.GetComponent<MovementScript>().isAlive = false;
 				gameEnd = true;
 				winScreen.SetActive(true);
 				Debug.Log("PLAYER WIN");

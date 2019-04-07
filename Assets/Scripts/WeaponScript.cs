@@ -23,50 +23,53 @@ public class WeaponScript : MonoBehaviour
 
     private void Update()
     {
-        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        if (Input.GetKeyDown(KeyCode.E) && _weaponUnderFeet != null && _weaponInHand.sprite == null)
+        if (GetComponent<MovementScript>().isAlive == true)
         {
-            GetWeaponInHand();
-        }
-
-        if (Input.GetMouseButtonDown(0) && _bulletsNum != 0 && _weaponInHand.sprite != null)
-        {
-            GameObject bull = Instantiate(_bullet, transform);
-            bull.transform.localPosition = Vector2.zero;
-            bull.transform.parent = null;
-            bull.transform.position += (new Vector3(mousePos.x, mousePos.y, 0) - bull.transform.position).normalized * 0.5f;
-            bull.transform.eulerAngles = 
-            new Vector3(0, 0, (Mathf.Atan2(mousePos.y - transform.position.y, mousePos.x - transform.position.x) 
-             * Mathf.Rad2Deg));
-            if (_weaponInHand.sprite.name != "5" && _weaponInHand.sprite.name != "12")
+            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            if (Input.GetKeyDown(KeyCode.E) && _weaponUnderFeet != null && _weaponInHand.sprite == null)
             {
-                Vector2 vel = new Vector3(mousePos.x, mousePos.y, 0) - transform.position;
-                bull.GetComponent<Rigidbody2D>().velocity = vel.normalized * 30;
-                _bulletsNum--;
+                GetWeaponInHand();
             }
-        }
-
-        if (Input.GetMouseButtonDown(1) && _weaponInHand.sprite != null)
-        {
-            GameObject weap = null;
-            foreach (var bigW in _bigWeapons)
+    
+            if (Input.GetMouseButtonDown(0) && _bulletsNum != 0 && _weaponInHand.sprite != null)
             {
-                if (bigW.name.Split('-')[0] == _weaponInHand.sprite.name)
+                GameObject bull = Instantiate(_bullet, transform);
+                bull.transform.localPosition = Vector2.zero;
+                bull.transform.parent = null;
+                bull.transform.position += (new Vector3(mousePos.x, mousePos.y, 0) - bull.transform.position).normalized * 0.5f;
+                bull.transform.eulerAngles = 
+                new Vector3(0, 0, (Mathf.Atan2(mousePos.y - transform.position.y, mousePos.x - transform.position.x) 
+                 * Mathf.Rad2Deg));
+                if (_weaponInHand.sprite.name != "5" && _weaponInHand.sprite.name != "12")
                 {
-                    weap = Instantiate(bigW, transform);
-                    weap.transform.localPosition = Vector2.zero;
-                    weap.transform.parent = null;
                     Vector2 vel = new Vector3(mousePos.x, mousePos.y, 0) - transform.position;
-                    weap.GetComponent<AmmoController>().bulletsNum = _bulletsNum;
-                    weap.GetComponent<Rigidbody2D>().velocity = vel.normalized * 10;
-                    weap.GetComponent<Rigidbody2D>().angularVelocity = 1000;
-                    weap.GetComponent<BoxCollider2D>().isTrigger = false;
-                    _weaponInHand.sprite = null;
-                    _bullet = null;
-                    _bulletsNum = 0;
-                    break ;
+                    bull.GetComponent<Rigidbody2D>().velocity = vel.normalized * 30;
+                    _bulletsNum--;
                 }
             }
+    
+            if (Input.GetMouseButtonDown(1) && _weaponInHand.sprite != null)
+            {
+                GameObject weap = null;
+                foreach (var bigW in _bigWeapons)
+                {
+                    if (bigW.name.Split('-')[0] == _weaponInHand.sprite.name)
+                    {
+                        weap = Instantiate(bigW, transform);
+                        weap.transform.localPosition = Vector2.zero;
+                        weap.transform.parent = null;
+                        Vector2 vel = new Vector3(mousePos.x, mousePos.y, 0) - transform.position;
+                        weap.GetComponent<AmmoController>().bulletsNum = _bulletsNum;
+                        weap.GetComponent<Rigidbody2D>().velocity = vel.normalized * 10;
+                        weap.GetComponent<Rigidbody2D>().angularVelocity = 1000;
+                        weap.GetComponent<BoxCollider2D>().isTrigger = false;
+                        _weaponInHand.sprite = null;
+                        _bullet = null;
+                        _bulletsNum = 0;
+                        break ;
+                    }
+                }
+            } 
         }    
     }
 
