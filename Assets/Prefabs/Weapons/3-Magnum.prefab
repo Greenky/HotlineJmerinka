@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6994416549141973582}
   - component: {fileID: 1484967646}
   - component: {fileID: 1802750648}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 3-Magnum
   m_TagString: Weapon
   m_Icon: {fileID: 0}

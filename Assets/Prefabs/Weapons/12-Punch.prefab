@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6122385521364600649}
   - component: {fileID: 220008622}
   - component: {fileID: 2004848023}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 12-Punch
   m_TagString: Weapon
   m_Icon: {fileID: 0}

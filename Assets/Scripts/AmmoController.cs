@@ -7,6 +7,7 @@ public class AmmoController : MonoBehaviour
     public int bulletsNum;
     public GameObject bullet;
     private Rigidbody2D _rb;
+    private bool isThrown = false;
 
     private void Start()
     {
@@ -15,11 +16,17 @@ public class AmmoController : MonoBehaviour
 
     private void Update()
     {
-//        if (_rb.velocity.magnitude < 0.5f)
-//        {
-//            _rb.velocity = Vector2.zero;
-//            _rb.angularVelocity = 0;
-//            GetComponent<BoxCollider2D>().isTrigger = true;
-//        }
+        if (_rb.velocity.magnitude > 0.1f && isThrown == false)
+        {
+            Invoke("TriggerOn", 1.5f);
+            isThrown = true;
+        }
+    }
+
+    private void TriggerOn()
+    {
+        _rb.velocity = Vector2.zero;
+        _rb.angularVelocity = 0;
+        GetComponent<BoxCollider2D>().isTrigger = true;
     }
 }

@@ -15,6 +15,7 @@ public class WeaponScript : MonoBehaviour
     {
         _weaponInHand.sprite = null;
         _weaponUnderFeet = null;
+        _bullet = null;
         _bulletsNum = 0;
     }
 
@@ -36,6 +37,7 @@ public class WeaponScript : MonoBehaviour
              * Mathf.Rad2Deg));
             Vector2 vel = new Vector3(mousePos.x, mousePos.y, 0) - transform.position;
             bull.GetComponent<Rigidbody2D>().velocity = vel.normalized * 30;
+            _bulletsNum--;
         }
 
         if (Input.GetMouseButtonDown(1) && _weaponInHand.sprite != null)
@@ -49,16 +51,17 @@ public class WeaponScript : MonoBehaviour
                     weap.transform.localPosition = Vector2.zero;
                     weap.transform.parent = null;
                     Vector2 vel = new Vector3(mousePos.x, mousePos.y, 0) - transform.position;
+                    weap.GetComponent<AmmoController>().bulletsNum = _bulletsNum;
                     weap.GetComponent<Rigidbody2D>().velocity = vel.normalized * 10;
-                    weap.GetComponent<Rigidbody2D>().angularVelocity = 600;
+                    weap.GetComponent<Rigidbody2D>().angularVelocity = 1000;
                     weap.GetComponent<BoxCollider2D>().isTrigger = false;
+                    _weaponInHand.sprite = null;
+                    _bullet = null;
+                    _bulletsNum = 0;
                     break ;
                 }
             }
-
-        }
-            
-
+        }    
     }
 
     private void OnTriggerEnter2D(Collider2D other)

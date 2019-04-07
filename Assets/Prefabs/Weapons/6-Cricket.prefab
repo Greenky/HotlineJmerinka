@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6045433437706680805}
   - component: {fileID: 1429727258}
   - component: {fileID: 726275441}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 6-Cricket
   m_TagString: Weapon
   m_Icon: {fileID: 0}

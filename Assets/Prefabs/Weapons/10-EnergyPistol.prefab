@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6964574381014855476}
   - component: {fileID: 1483470833}
   - component: {fileID: 1907700065}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 10-EnergyPistol
   m_TagString: Weapon
   m_Icon: {fileID: 0}
