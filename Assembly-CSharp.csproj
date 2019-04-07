@@ -60,7 +60,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Projectile.cs" />
     <Compile Include="Assets\Scripts\AmmoController.cs" />
     <Compile Include="Assets\Scripts\CameraFacing.cs" />
     <Compile Include="Assets\Scripts\Character.cs" />
@@ -70,6 +69,7 @@
     <Compile Include="Assets\Scripts\HPcomponent.cs" />
     <Compile Include="Assets\Scripts\MovementScript.cs" />
     <Compile Include="Assets\Scripts\PlayerFollow.cs" />
+    <Compile Include="Assets\Scripts\Projectile.cs" />
     <Compile Include="Assets\Scripts\WeaponScript.cs" />
     <None Include="Assets\Fonts\friday13\Font License.txt" />
     <None Include="Assets\Fonts\d3digitalism\Read Me.txt" />

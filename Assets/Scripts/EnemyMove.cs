@@ -8,6 +8,7 @@ public class EnemyMove : MonoBehaviour
 	[Range(0, 360)]
 	public float viewAngle;
 	public float attackDist = 0.2f;
+	public float speed = 10f;
 
 	public LayerMask targetMask;
 	public LayerMask obstacleMask;
@@ -41,7 +42,7 @@ public class EnemyMove : MonoBehaviour
 		Debug.Log(dist + " dist");
 		if (attackDist < dist)
 		{
-			GetComponent<Rigidbody2D>().MovePosition(pos);			
+			GetComponent<Rigidbody2D>().MovePosition(pos*Time.deltaTime* speed);			
 		}
 	}
 
