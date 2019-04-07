@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+public enum states { idle, patrole, chase };
 
 public class EnemyMove : MonoBehaviour
 {
+	public WeaponScript playerShoot;
+	public List<Transform> waypoints;
 	public float viewRadius;
 	[Range(0, 360)]
 	public float viewAngle;
@@ -12,14 +15,34 @@ public class EnemyMove : MonoBehaviour
 	public LayerMask targetMask;
 	public LayerMask obstacleMask;
 
+
 	private bool _isShooting = false;
 	public bool isAlive = true;
+	public float hearDist = 1f;
+	bool patrole = false;
 	//[HideInInspector]
 	public List<Transform> visibleTargets = new List<Transform>();
+	Coroutine patroleCor;
 
 	void Start()
 	{
-//		StartCoroutine("FindTargetsWithDelay", .2f);
+		if (waypoints.Count > 1)
+		{
+			//patrole = true;
+			patroleCor = StartCoroutine(Patrole());
+		}
+		playerShoot = GameObject.FindGameObjectWithTag("Player").GetComponent<WeaponScript>();
+		playerShoot.ShootEvent.AddListener(OnPlayerShoot);
+		//		StartCoroutine("FindTargetsWithDelay", .2f);
+	}
+	//not finished
+	public void OnPlayerShoot(Vector2 pos)
+	{
+		float distance = Vector2.Distance(transform.position, pos);
+		if (distance <  hearDist)
+		{
+			Debug.Log("I HEAR YOU!!");
+		}
 	}
 
 	private void Update()
@@ -29,12 +52,48 @@ public class EnemyMove : MonoBehaviour
 			FindVisibleTargets();
 			if (visibleTargets.Count > 0)
 			{
+				if (patroleCor != null)
+					StopCoroutine(patroleCor);
 				if (!_isShooting)
 					StartCoroutine(Shoot());
 				MoveToTarget(visibleTargets[0].position);
 			}
+			else
+				if(patroleCor == null && waypoints.Count>1)
+					patroleCor = StartCoroutine(Patrole());
+
+
 		}
 		
+	}
+	private IEnumerator Patrole()
+	{
+		for (int i=0;i<waypoints.Count;i++)
+		{
+			while (Vector3.Distance(waypoints[i].position, transform.position) > 0.2f)
+			{
+				//Debug.Log("Move " + i + " dist " + Vector3.Distance(waypoints[i].position, transform.position).ToString());
+				MoveToTargetPatrol(waypoints[i].position);
+				yield return new WaitForEndOfFrame();
+			}
+			//Debug.Log("doshel");
+			if (i == waypoints.Count - 1)
+				i = -1;
+			yield return new WaitForEndOfFrame();
+		}
+		
+	}
+	private void MoveToTargetPatrol(Vector3 pos)
+	{
+		float dist = Vector3.Distance(transform.position, pos);
+		//Debug.Log(dist + " dist");
+		if (0.1f < dist)
+		{
+			GetComponent<Rigidbody2D>().transform.eulerAngles =
+			new Vector3(0, 0, 90 + (Mathf.Atan2(pos.y - transform.position.y, pos.x - transform.position.x)
+			* Mathf.Rad2Deg));
+			GetComponent<Rigidbody2D>().MovePosition((pos - transform.position).normalized * Time.deltaTime * 3 + transform.position);
+		}
 	}
 
 	private IEnumerator Shoot()
@@ -50,7 +109,7 @@ public class EnemyMove : MonoBehaviour
 	private void MoveToTarget(Vector3 pos)
 	{
 		float dist = Vector3.Distance(transform.position, visibleTargets[0].position);
-		Debug.Log(dist + " dist");
+		//Debug.Log(dist + " dist");
 		if (attackDist < dist)
 		{
 			GetComponent<Rigidbody2D>().MovePosition((pos - transform.position).normalized * Time.deltaTime * 3 + transform.position);			
@@ -63,7 +122,7 @@ public class EnemyMove : MonoBehaviour
 		visibleTargets.Clear();
 		Vector2 pos = new Vector2(transform.position.x, transform.position.y);
 		Collider2D[] targetsInViewRadius = Physics2D.OverlapCircleAll(pos, viewRadius, targetMask);
-		Debug.Log("try to find " + targetsInViewRadius.Length);
+		//Debug.Log("try to find " + targetsInViewRadius.Length);
 		for (int i = 0; i < targetsInViewRadius.Length; i++)
 		{
 			

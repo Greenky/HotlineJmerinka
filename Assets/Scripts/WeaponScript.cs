@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class WeaponScript : MonoBehaviour
 {
@@ -11,14 +12,18 @@ public class WeaponScript : MonoBehaviour
     [SerializeField] public SpriteRenderer _weaponInHand;
     [SerializeField] private Sprite[] _weapons;
     [SerializeField] private GameObject[] _bigWeapons;
-    
-    void Start()
+	[System.Serializable]
+	public  class  V2Event: UnityEvent<Vector2>{ }
+	public V2Event ShootEvent;
+	void Start()
     {
         _maxBullets = 0;
         _weaponInHand.sprite = null;
         _weaponUnderFeet = null;
         _bullet = null;
         _bulletsNum = 0;
+		if (ShootEvent == null)
+			ShootEvent = new V2Event();
     }
 
     private void Update()
