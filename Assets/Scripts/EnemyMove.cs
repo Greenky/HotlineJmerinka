@@ -14,17 +14,13 @@ public class EnemyMove : MonoBehaviour
 
 	private bool _isShooting = false;
 	public bool isAlive = true;
+	public bool notStunned = true;
 	//[HideInInspector]
 	public List<Transform> visibleTargets = new List<Transform>();
 
-	void Start()
-	{
-//		StartCoroutine("FindTargetsWithDelay", .2f);
-	}
-
 	private void Update()
 	{
-		if (isAlive)
+		if (isAlive && notStunned)
 		{
 			FindVisibleTargets();
 			if (visibleTargets.Count > 0)
@@ -37,10 +33,19 @@ public class EnemyMove : MonoBehaviour
 		
 	}
 
+	public IEnumerator Stan()
+	{
+		notStunned = false;
+		yield return new WaitForSeconds(2);
+		notStunned = true;
+	}
+	
+	
 	private IEnumerator Shoot()
 	{
 		_isShooting = true;
-		GetComponent<EnemyWeaponScript>().Shoot(visibleTargets[0].position);
+		if (isAlive && notStunned)
+			GetComponent<EnemyWeaponScript>().Shoot(visibleTargets[0].position);
 		yield return new WaitForSeconds(0.5f);
 		if (visibleTargets.Count > 0)
 			StartCoroutine(Shoot());
