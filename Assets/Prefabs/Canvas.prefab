@@ -776,7 +776,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1657922380
 RectTransform:
   m_ObjectHideFlags: 0
@@ -947,13 +947,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5299745162339739815}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26e3c6a329e399f4790572cf3b6cf282, type: 3}
+  m_Script: {fileID: 11500000, guid: 19db7edee4be34b0c88d3fafbfaae10c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentAmmo: 0
-  maxAmmo: 0
-  ammoText: {fileID: 1379352997}
-  ammo: 'AMMO: '
+  bulletsNum: 0
+  bullet: {fileID: 0}
 --- !u!114 &6944227149978780214
 MonoBehaviour:
   m_ObjectHideFlags: 0
