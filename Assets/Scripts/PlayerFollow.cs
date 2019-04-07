@@ -14,6 +14,7 @@ public class PlayerFollow : MonoBehaviour
 
     void Update()
     {
-        transform.position = _delta + _player.position;
+        if (_player)
+            transform.position = _delta + _player.position;
     }
 }

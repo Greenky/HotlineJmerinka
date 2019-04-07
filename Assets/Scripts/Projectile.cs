@@ -16,7 +16,7 @@ public class Projectile : MonoBehaviour
     {
         if (other.collider.tag == "Enemy" || other.collider.tag == "Player")
         {
-            // ubit
+            other.collider.GetComponent<HPcomponent>().DoDamage(10);
         }
         if (gameObject)
             Destroy(gameObject);

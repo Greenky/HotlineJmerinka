@@ -21,13 +21,18 @@ public class HPcomponent : MonoBehaviour
 
 	}
 
-	private void Start()
-	{
-		
-	}
-
 	public void OnDeath()
 	{
+		if (transform.tag == "Player")
+		{
+			GetComponent<MovementScript>().isAlive = false;
+		}
+		else
+		{
+			GetComponent<EnemyMove>().isAlive = false;
+		}
+		gameObject.GetComponent<CircleCollider2D>().enabled = false;
+		gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 		List<SpriteRenderer> parts = new List<SpriteRenderer>();
 		parts.Add(GetComponent<SpriteRenderer>());
 		SpriteRenderer[] sprites =  GetComponentsInChildren<SpriteRenderer>();
