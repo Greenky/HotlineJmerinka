@@ -35303,6 +35303,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 1486930608383756370, guid: 03621b32b22eb3143a84962a72cf5699, type: 3}
+      propertyPath: viewAngle
+      value: 80
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03621b32b22eb3143a84962a72cf5699, type: 3}
 --- !u!1 &1457316665
@@ -41433,7 +41437,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1379352999, guid: bed99f7abe43f674e810b3e03a39736a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -53.64
+      value: -53.640015
       objectReference: {fileID: 0}
     - target: {fileID: 1379352999, guid: bed99f7abe43f674e810b3e03a39736a, type: 3}
       propertyPath: m_SizeDelta.x
