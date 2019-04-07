@@ -9,8 +9,11 @@ public class Character : MonoBehaviour
 	
     void Start()
     {
-        
-    }
+		if (move == null)
+			move = GetComponent<MoveComponent>();
+		if (hp == null)
+			hp = GetComponent<HPcomponent>();
+	}
 
     void Update()
     {
