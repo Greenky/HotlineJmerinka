@@ -24,6 +24,7 @@ public class Projectile : MonoBehaviour
 
     private void DestroyAfter()
     {
-        Destroy(gameObject);
+        if (gameObject)
+            Destroy(gameObject);
     }
 }
