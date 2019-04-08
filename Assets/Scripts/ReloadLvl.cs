@@ -9,4 +9,9 @@ public class ReloadLvl : MonoBehaviour
 	{ Scene sc = SceneManager.GetActiveScene();
 		SceneManager.LoadScene(sc.name);
 	}
+
+	public void Exit()
+	{
+		SceneManager.LoadScene("MainMenu");
+	}
 }

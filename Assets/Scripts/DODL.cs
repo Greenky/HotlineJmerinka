@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DODL : MonoBehaviour
 {
@@ -10,5 +11,11 @@ public class DODL : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         if (GameObject.FindGameObjectsWithTag("Finish").Length > 1)
             Destroy(gameObject);
-    }
+	}
+
+	private void Update()
+	{
+		if (SceneManager.GetActiveScene().name == "MainMenu")
+			Destroy(gameObject);
+	}
 }

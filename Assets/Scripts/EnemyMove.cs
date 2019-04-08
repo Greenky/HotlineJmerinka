@@ -18,6 +18,7 @@ public class EnemyMove : MonoBehaviour
 
 	private bool _isShooting = false;
 	public bool isAlive = true;
+	public bool notStunned = true;
 
 	public float hearDist = 1f;
 	bool patrole = false;
@@ -76,11 +77,9 @@ public class EnemyMove : MonoBehaviour
 		{
 			while (Vector3.Distance(waypoints[i].position, transform.position) > 0.2f)
 			{
-				//Debug.Log("Move " + i + " dist " + Vector3.Distance(waypoints[i].position, transform.position).ToString());
 				MoveToTargetPatrol(waypoints[i].position);
 				yield return new WaitForEndOfFrame();
 			}
-			//Debug.Log("doshel");
 			if (i == waypoints.Count - 1)
 				i = -1;
 			yield return new WaitForEndOfFrame();
