@@ -16,7 +16,7 @@ public class CanvasAmmo : MonoBehaviour
 
     void Update()
     {
-        if (playerWeapon._weaponInHand.sprite != null)
+        if (playerWeapon && playerWeapon._weaponInHand.sprite != null)
         {
             maxAmmo = playerWeapon._maxBullets;
             currentAmmo = playerWeapon._bulletsNum;

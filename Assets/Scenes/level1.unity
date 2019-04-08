@@ -12649,7 +12649,12 @@ PrefabInstance:
     - target: {fileID: 1486930608383756370, guid: 03621b32b22eb3143a84962a72cf5699,
         type: 3}
       propertyPath: viewAngle
-      value: 80
+      value: 201
+      objectReference: {fileID: 0}
+    - target: {fileID: 1486930608383756370, guid: 03621b32b22eb3143a84962a72cf5699,
+        type: 3}
+      propertyPath: viewRadius
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03621b32b22eb3143a84962a72cf5699, type: 3}
@@ -13349,7 +13354,7 @@ PrefabInstance:
     - target: {fileID: 1486930608383756370, guid: 03621b32b22eb3143a84962a72cf5699,
         type: 3}
       propertyPath: viewAngle
-      value: 80
+      value: 201
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03621b32b22eb3143a84962a72cf5699, type: 3}
@@ -27538,7 +27543,12 @@ PrefabInstance:
     - target: {fileID: 1486930608383756370, guid: 03621b32b22eb3143a84962a72cf5699,
         type: 3}
       propertyPath: viewAngle
-      value: 80
+      value: 360
+      objectReference: {fileID: 0}
+    - target: {fileID: 1486930608383756370, guid: 03621b32b22eb3143a84962a72cf5699,
+        type: 3}
+      propertyPath: viewRadius
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03621b32b22eb3143a84962a72cf5699, type: 3}
@@ -30000,7 +30010,7 @@ PrefabInstance:
     - target: {fileID: 1486930608383756370, guid: 03621b32b22eb3143a84962a72cf5699,
         type: 3}
       propertyPath: viewAngle
-      value: 80
+      value: 201
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03621b32b22eb3143a84962a72cf5699, type: 3}
@@ -38831,7 +38841,12 @@ PrefabInstance:
     - target: {fileID: 1486930608383756370, guid: 03621b32b22eb3143a84962a72cf5699,
         type: 3}
       propertyPath: viewAngle
-      value: 80
+      value: 201
+      objectReference: {fileID: 0}
+    - target: {fileID: 1486930608383756370, guid: 03621b32b22eb3143a84962a72cf5699,
+        type: 3}
+      propertyPath: viewRadius
+      value: 4.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03621b32b22eb3143a84962a72cf5699, type: 3}
@@ -43482,7 +43497,7 @@ PrefabInstance:
     - target: {fileID: 1486930608383756370, guid: 03621b32b22eb3143a84962a72cf5699,
         type: 3}
       propertyPath: viewAngle
-      value: 80
+      value: 201
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03621b32b22eb3143a84962a72cf5699, type: 3}
@@ -45273,12 +45288,12 @@ PrefabInstance:
     - target: {fileID: 2383033911356803239, guid: 03621b32b22eb3143a84962a72cf5699,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.4
+      value: -6.93
       objectReference: {fileID: 0}
     - target: {fileID: 2383033911356803239, guid: 03621b32b22eb3143a84962a72cf5699,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.55
+      value: 7.31
       objectReference: {fileID: 0}
     - target: {fileID: 2383033911356803239, guid: 03621b32b22eb3143a84962a72cf5699,
         type: 3}
@@ -45328,7 +45343,12 @@ PrefabInstance:
     - target: {fileID: 1486930608383756370, guid: 03621b32b22eb3143a84962a72cf5699,
         type: 3}
       propertyPath: viewAngle
-      value: 80
+      value: 201
+      objectReference: {fileID: 0}
+    - target: {fileID: 1486930608383756370, guid: 03621b32b22eb3143a84962a72cf5699,
+        type: 3}
+      propertyPath: viewRadius
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03621b32b22eb3143a84962a72cf5699, type: 3}
